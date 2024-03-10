@@ -1,0 +1,25 @@
+<!-- To make use of the base template, call the extends function and refer to base.html -->
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+	<!--
+		To tell base.html which part of this page corresponds to the block named content in base.html,
+		i.e. which part of this index.html page corresponds to the dynamic content region of the base
+		template, we tell the interpreter which bit of the index page is the content block of base.html
+	-->
+	{% block content %}
+		<!-- Title is the footage name. Remember that the string
+		context of the footage object returns the footage name automatically. -->
+		<h1>{{ footage }}</h1>
+		<!-- Video tag contains the media player -->
+		<video width="640" height="480" controls>
+			<!-- The footage source is: secucam->secucam_app->footage->footage name -->
+			<source src="../../footage/{{ footage }}" type="video/mp4"/>
+		</video>
+		<br>
+		<!-- 
+			Add a link that allows the user to delete this footage from
+			the database. This takes a new path for a new function that
+			deletes a record given the PK.
+		-->
+		<a href="/delete/{{ footage.pk }}">Delete Footage</a>
+	{% endblock %}

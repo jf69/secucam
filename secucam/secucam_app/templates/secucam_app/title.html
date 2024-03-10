@@ -1,0 +1,21 @@
+<!-- Bootstrap html -->
+<!-- Style the nav area using various bootstrap classes. You can look them up in the bootstrap doc -->
+<nav class="navbar navbar-expand-md sticky-top flex-column">
+	<!-- This nav area will define the entire top of the page, both the logo strip and the navigation strip -->
+	<!-- So we'll have two divs, one for the original header (title + logo), and one for the original nav bar. -->
+	<div class="w-100 d-flex"> <!--w100 means 100% of page width -->
+		<div class="navbar-header" id="header"> <!-- class navbar-header is the bootstrap css-->
+			<img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/202002_Laboratory_instrument_dna.svg" alt="dna logo", width="50px", height="50px">
+			<h1 id="application_title">Secucam</h1>
+		</div>
+	</div>
+
+	<div class="w-100 d-flex">
+		<!-- For the nav bar, bootstrap wants to use an unordered list. -->
+		<!-- The classes added are used by bootstrap css -->
+		<ul class="navbar-nav mr-auto" id="navigation">
+			<!-- Change home ref to page that we are on -->
+			<li class="nav-item active"><a class="nav_link" href="/">Home&nbsp;</a></li>
+		</ul>
+	</div>
+</nav>
