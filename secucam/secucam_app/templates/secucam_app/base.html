@@ -1,0 +1,52 @@
+<!-- 
+	This is the base template of all the web pages.
+	We want to display the footage list on the left-hand side of every 
+	web page so that we can always access the list from anywhere.
+	So, we include the the block of HTML in this template.
+ -->
+ <!-- Inlcude the header, title and footer blocks. -->
+{% include "./header.html" %} 
+{% include "./title.html" %}
+
+ <!-- 
+	We have two blocks that are sitting side-by-side.
+	We want to put those two cells in a bootstrap 'row' so that
+	the rows will reflow nicely when we use different browsers.
+ -->
+<!-- Open a bootstrap container that flows freely when the browser is resized. -->
+<div class="container-fluid">
+	<!-- Put the content inside a row -->
+	<div class="row">
+		<!--
+			Each row is divided up into 12 blocks, so we have to tell it how many of the
+			cells/blocks our content covers.
+			The first block covers the first third of the page (4 of 12).
+		 -->
+		<div class="col-sm-4" id="footage_list">
+			{% block footageList %}
+				<h1>Footage List</h1>
+				<table>
+					<tr><th>Footage Name</th></tr>
+
+					{% for footage in footage_list %}
+						<tr><td><a href="/footage/{{footage.pk}}" >{{ footage }}</a></td></tr>
+					{% endfor %}
+				</table>
+			{% endblock %}
+		</div>
+
+		<!--
+			The second block covers the last two thirds of the page (8 of 12).
+		 -->
+		<div class="col-sm-8" class="content">
+			<!--
+				Dynamically insert a block called content.
+				This is where content will be inserted when the page is rendered.
+				If for some reason no content is handed, it shows a default message to the user: "Did not render"
+			-->
+			{% block content %} Did not render content {% endblock %}
+		</div>
+
+		{% include "./footer.html" %}
+	</div>
+</div>

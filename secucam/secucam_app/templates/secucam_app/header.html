@@ -1,0 +1,26 @@
+{% load bootstrap4 %}
+<!-- Header template -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Secucam">
+		<meta name="keywords" content="HTML, yolov8, security, camera">
+		
+		<!-- Insert template tags that load the bootstrap's components -->
+		{% bootstrap_css %}
+		{% bootstrap_javascript jquery='full' %}
+		<!--
+			Bootstrap conceptualizes your page as a grid of rows, each
+			of which is divided into 12 equal-size columns.
+			In our website, we can think of our header region as a row,
+			our navigation region as another row,
+			our footage_list and content regions as two columns of a single row,
+			and our footer region as a row.
+		-->
+
+		<!-- Load the css document. -->
+		<link rel="stylesheet" type="text/css" href="../static/css/secucam_app.css">
+	</head>
+	
+	<body>
