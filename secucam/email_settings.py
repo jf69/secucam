@@ -1,3 +1,3 @@
-from_email = 'secucam91@gmail.com'
-password = 'whof tpdn ziuf omsc'
-to_email = 'ichitsukky@gmail.com'
+from_email = 'secucam91@gmail.com' # DO NOT MODIFY
+password = 'whof tpdn ziuf omsc' # DO NOT MODIFY
+to_email = '' # MAKE SURE TO PUT YOUR EMAIL ADDRESS HERE
