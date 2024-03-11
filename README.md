@@ -15,4 +15,11 @@ Camera Surveillance System
    - or the PyTorch version installed from the requirements.txt may not be compatible with your PC's cuda version.
      In this case, visit https://pytorch.org/get-started/locally/ to select the version that is compatible with your system.
    If the returned value is still False, that is okay. You can still run the application on your CPU. Just make sure that the CPU version of PyTorch is installed.
-6) 
+6) In the email_settings.py file, make sure you set the to_email variable to your email in order to receive detection alerts.
+7) The application is now ready to run. In VSCode:
+   - Open a terminal, access your virtual environment, then run the command: python manage.py 127.0.0.1:8080
+     This will run the web server on the local host.
+     Copy 127.0.0.1:8080 and paste it in your web browser to access the dashboard.
+   - Open a second terminal, access your virtual environment, then run the command: python secucam.py
+     This will run the YOLOv8 detection and tracing algorithm.
+8) Now, every time a detection occurs, you should receive an email notification and the detection footage will be saved in the footage folder, which you should be able to access from the dashboard on your web browser.
