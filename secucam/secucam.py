@@ -1,7 +1,6 @@
 import torch
 from ultralytics import YOLO
 import cv2
-from PIL import Image
 import numpy as np
 
 import smtplib
@@ -206,10 +205,10 @@ class ObjectDetection:
 
 					# Create a VideoWriter object with cv2
 					# Set the name of the video to the recording_start_time
-					video_name = f"{self.recording_start_time.strftime('%d-%m-%Y-%Hh%Mm%Ss')}.avi"
-					# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+					video_name = f"{self.recording_start_time.strftime('%d-%m-%Y-%Hh%Mm%Ss')}.mp4"
+					fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 					fps = 30
-					video = cv2.VideoWriter(video_name, -1, fps, (640, 480))
+					video = cv2.VideoWriter(video_name, fourcc, fps, (640, 480))
 
 					# Iterate over the frames in the saved_frames array and combine to convert them into video
 					for frame in self.saved_frames:
